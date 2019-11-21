@@ -1,14 +1,3 @@
-# Go Cache
-A simple, fast and easy to use cache storage solution for caching of data on the same machine. Cache is a small package that you can use in your Go application to store data for fast access and provides convenient methods to do so.
-
-## Install
-```commandline
-go get github.com/mrbenosborne/go-cache
-```
-
-### Example
-
-```go
 package main
 
 import (
@@ -36,6 +25,5 @@ func main() {
 
 	// Delete the item from the store.
 	s.Delete("LGW")
-	
+
 }
-```
