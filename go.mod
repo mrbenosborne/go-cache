@@ -1,4 +1,4 @@
-module github.com/mrbenosborne/cache
+module github.com/mrbenosborne/go-cache
 
 go 1.13
 
