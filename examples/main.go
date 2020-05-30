@@ -20,7 +20,7 @@ func main() {
 	s.Add("LGW", "London Gatwick")
 
 	// Retrieve the item from the store.
-	airportName := s.Get("LGW")
+	airportName, _ := s.Get("LGW").String()
 	fmt.Printf("The airport name is: %s\n", airportName)
 
 	// Delete the item from the store.

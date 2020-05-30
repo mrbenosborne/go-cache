@@ -7,7 +7,7 @@ import (
 // Store holds items in memory.
 type Store struct {
 	mu    sync.RWMutex
-	items map[string]Item
+	items map[string]*Item
 }
 
 // Delete an item from the store.
@@ -21,16 +21,17 @@ func (s *Store) Delete(key string) {
 // value can be type of interface{}.
 func (s *Store) Add(key string, value interface{}) {
 	s.mu.Lock()
-	s.items[key] = Item{
+	s.items[key] = &Item{
 		data: value,
 	}
 	s.mu.Unlock()
 }
 
-// Get an item from the store as a type of interface{}.
-func (s *Store) Get(key string) (i interface{}) {
+// Get an item from the storem, returns
+// a pointer to item.
+func (s *Store) Get(key string) (i *Item) {
 	s.mu.RLock()
-	i = s.items[key].data
+	i = s.items[key]
 	s.mu.RUnlock()
 	return i
 }

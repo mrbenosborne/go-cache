@@ -22,7 +22,7 @@ func New(size int) *Cache {
 // Returns a pointer to type of Store.
 func (c *Cache) New(name string) *Store {
 	s := &Store{
-		items: make(map[string]Item),
+		items: make(map[string]*Item),
 	}
 	c.mu.Lock()
 	c.Stores[name] = s
