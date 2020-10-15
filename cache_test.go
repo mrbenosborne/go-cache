@@ -3,10 +3,10 @@
 package cache
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestCache_New(t *testing.T) {
@@ -54,7 +54,7 @@ func TestCache_NewStore(t *testing.T) {
 			input: "foo",
 			size:  0,
 			want: &Store{
-				items: make(map[string]Item),
+				items: make(map[string]*Item),
 			},
 		},
 		{
@@ -62,7 +62,7 @@ func TestCache_NewStore(t *testing.T) {
 			input: "foo and bar",
 			size:  10,
 			want: &Store{
-				items: make(map[string]Item),
+				items: make(map[string]*Item),
 			},
 		},
 	}
@@ -91,7 +91,7 @@ func TestCache_GetStore(t *testing.T) {
 			input: "foo",
 			size:  0,
 			want: &Store{
-				items: make(map[string]Item),
+				items: make(map[string]*Item),
 			},
 		},
 		{
@@ -99,7 +99,7 @@ func TestCache_GetStore(t *testing.T) {
 			input: "foo and bar",
 			size:  0,
 			want: &Store{
-				items: make(map[string]Item),
+				items: make(map[string]*Item),
 			},
 		},
 	}

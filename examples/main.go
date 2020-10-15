@@ -25,5 +25,4 @@ func main() {
 
 	// Delete the item from the store.
 	s.Delete("LGW")
-
 }

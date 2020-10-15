@@ -10,7 +10,7 @@ import (
 
 func TestStore_Add(t *testing.T) {
 	s := Store{
-		items: make(map[string]Item),
+		items: make(map[string]*Item),
 	}
 
 	cases := []struct {
@@ -57,7 +57,7 @@ func TestStore_Add(t *testing.T) {
 			s.Add(tc.key, tc.input)
 			s.mu.RLock()
 			assert.NotNil(t, s.items[tc.key])
-			assert.Equal(t, Item{data: tc.input}, s.items[tc.key])
+			assert.Equal(t, &Item{data: tc.input}, s.items[tc.key])
 			s.mu.RUnlock()
 		})
 	}
@@ -65,7 +65,7 @@ func TestStore_Add(t *testing.T) {
 
 func TestStore_Get(t *testing.T) {
 	s := &Store{
-		items: make(map[string]Item),
+		items: make(map[string]*Item),
 	}
 
 	s.Add("foo", "bar")
@@ -75,7 +75,7 @@ func TestStore_Get(t *testing.T) {
 
 func TestStore_Delete(t *testing.T) {
 	s := &Store{
-		items: make(map[string]Item),
+		items: make(map[string]*Item),
 	}
 
 	s.Add("foo", "bar")
