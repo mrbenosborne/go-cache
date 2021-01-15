@@ -3,6 +3,8 @@ A simple, fast and easy to use cache storage solution for caching of data on the
 
 ![Go](https://github.com/mrbenosborne/go-cache/workflows/Go/badge.svg)
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/mrbenosborne/go-cache.svg)](https://pkg.go.dev/github.com/mrbenosborne/go-cache)
+
 ## Install
 ```commandline
 go get github.com/mrbenosborne/go-cache
